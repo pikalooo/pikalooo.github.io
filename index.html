@@ -127,7 +127,12 @@
     .card { padding:25px; border:1px solid var(--line); background:var(--surface); border-radius:18px; box-shadow:var(--shadow); }
     .card h3 { font-size:1.06rem; line-height:1.4; margin:10px 0; }
     .card p { color:var(--muted); font-size:.94rem; margin-bottom:0; }
-    .card-icon { display:inline-grid; place-items:center; height:43px; width:43px; background:var(--accent-soft); border-radius:12px; font-size:1.25rem; }
+.card-icon {
+  font-family: "Segoe UI Symbol", "Noto Sans Symbols 2", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--accent);
+}   
     .list-card { padding:23px 26px; margin-bottom:13px; border:1px solid var(--line); border-radius:16px; background:var(--surface); }
     .list-card h3 { font-size:1.04rem; line-height:1.5; margin-bottom:5px; }
     .metadata { color:var(--muted); font-size:.88rem; margin-bottom:9px; }
@@ -193,7 +198,6 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#home" 🙂 aria-label="ZHT Home">
-  <!-- <img 🙂 alt="ZHT logo"> -->
 </a>
       <nav class="nav" aria-label="Main navigation">
         <a href="#home">Home</a>
