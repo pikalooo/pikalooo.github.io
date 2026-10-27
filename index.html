@@ -97,6 +97,24 @@
       .button { padding:8px 11px; }
     }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button:hover { transform:none; } }
+
+/* Publications subsection titles */
+.publication-subtitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text, #1f2937);
+}
+
+/* Paper titles */
+.list-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+    
   </style>
 </head>
 <body>
@@ -155,26 +173,51 @@
             <span class="tag">LLMs</span><span class="tag">Memory</span><span class="tag">Submodular Optimization</span><span class="tag">Streaming Optimization</span></article>
         </div>
       </section>
-      <section id="publications" class="content-section" aria-labelledby="publications-title">
-        <div class="section-head"><h2 id="publications-title">Publications</h2></div>
-        <!-- Sample publications are placeholders, not real papers. Replace titles, authors, venues, years, and URLs before publishing. -->
-        <p class="prose">My name is <b>bolded</b>, and my supervisor is marked with an asterisk *.</p>
-        <article class="list-card">
-          <span class="tag">Sample · Replace</span>
-          <h3>[Publication Title 1: Insert Your Actual Paper Title]</h3>
-          <p class="metadata">Your Name, Coauthor(s) · Journal / Conference Name · 2026</p>
-          <p><a href="https://doi.org/" target="_blank" rel="noopener noreferrer">Paper Link (Replace URL) ↗</a></p>
-        </article>
-        
-        <article class="list-card">
-          <span class="tag">Sample · Replace</span>
-          <h3>[Publication Title 2: Insert Your Actual Paper Title]</h3>
-          <p class="metadata">Your Name, Coauthor(s) · Journal / Conference Name · 2025</p>
-          <p><a href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">Preprint Link (Replace URL) ↗</a></p>
-        </article>
-        
-        <!-- <p class="prose">If you do not have any publications yet, you can rename this section "Working Papers" or remove it until you have research to share.</p> -->
-      </section>
+<section id="publications" class="content-section" aria-labelledby="publications-title">
+
+  <div class="section-head">
+    <h2 id="publications-title">Publications</h2>
+  </div>
+
+  <p class="prose">
+    My name is <b>bolded</b>, and my supervisor is marked with an asterisk *.
+  </p>
+
+  <!-- ==================== Accepted Papers ==================== -->
+  <h3 class="publication-subtitle">Accepted Papers</h3>
+
+  <article class="list-card">
+    <span class="tag">Transferable Adversarial Attacks</span>
+    <h4>[Malicious Node Injection: A Transferable Adversarial Attack on GNN Fairness]</h4>
+    <p class="metadata">
+      <b>Haotian Zhang</b>, He Huang*, Shuang Cui, Yu-e Sun · 40th Conference on Neural Information Processing System (NeurIPS 2026), CCF A
+    </p>
+    <p>
+      <a href="https://neurips.cc/virtual/2026/loc/sydney/poster/149991" target="_blank" rel="noopener noreferrer">
+        Paper Link ↗
+      </a>
+    </p>
+  </article>
+
+
+  <!-- ==================== Papers Under Review ==================== -->
+  <h3 class="publication-subtitle">Papers Under Review</h3>
+  
+  <article class="list-card">
+    <span class="tag">Transferable Adversarial Attacks</span>
+    <h4>[Publication Title 2: Insert Your Actual Paper Title]</h4>
+    <p class="metadata">
+      <b>Your Name</b>, Coauthor(s), Supervisor* · Under Review · 2026
+    </p>
+    <!-- 如果有 arXiv 预印本，可以保留下面的链接 -->
+    <p>
+      <a href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">
+        Preprint ↗
+      </a>
+    </p>
+  </article>
+
+</section>
       <!-- <section id="contact" class="content-section" aria-labelledby="contact-title">
         <div class="section-head"><h2 id="contact-title">Contact</h2></div>
         <div class="contact-box">
