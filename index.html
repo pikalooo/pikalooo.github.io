@@ -32,7 +32,30 @@
     /* ========== 2. Top navigation ========== */
     .site-header { position:sticky; top:0; z-index:20; border-bottom:1px solid var(--line); background:var(--surface); }
     .header-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
-    .brand { font-weight:800; letter-spacing:-.03em; font-size:1.2rem; color:var(--text); white-space:nowrap; }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  white-space: nowrap;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  height: 40px;   /* 控制 logo 高度 */
+  width: auto;
+  object-fit: contain;
+}
+
+    @media (max-width: 800px) {
+  .brand img {
+    height: 34px;
+  }
+}
     .nav { display:flex; flex-wrap:wrap; gap:4px; align-items:center; justify-content:flex-end; }
     .nav a { padding:8px 9px; font-size:.86rem; color:var(--muted); border-radius:9px; white-space:nowrap; }
     .nav a:hover { color:var(--accent); background:var(--accent-soft); text-decoration:none; }
@@ -169,7 +192,9 @@
   <!-- Navigation: customize labels and section links as needed. -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#home">ZHT <span style="color:var(--accent)">.</span></a>
+      <a class="brand" href="#home" aria-label="ZHT Home">
+  <img 🙂 alt="ZHT logo">
+</a>
       <nav class="nav" aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -216,11 +241,11 @@
       <section id="research" class="content-section" aria-labelledby="research-title">
         <div class="section-head"><h2 id="research-title">Research</h2></div>
         <div class="cards">
-          <article class="card"><span class="card-icon" aria-hidden="true">✦</span><h3>Transferable Adversarial Attacks</h3><p>My research investigates adversarial security and transferability in deep learning. I study fairness-targeted attacks, robust model learning, and transferable poisoning on graph neural networks and text-attributed graphs. I also develop physical adversarial attacks against modern object detection systems to enhance real-world effectiveness and cross-model transferability.
+          <article class="card"><span class="card-icon" aria-hidden="true">🎭</span><h3>Transferable Adversarial Attacks</h3><p>My research investigates adversarial security and transferability in deep learning. I study fairness-targeted attacks, robust model learning, and transferable poisoning on graph neural networks and text-attributed graphs. I also develop physical adversarial attacks against modern object detection systems to enhance real-world effectiveness and cross-model transferability.
 </p><span class="tag">Adversarial Attacks</span><span class="tag">GCN</span><span class="tag">GNN</span><span class="tag">Fairness</span></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">◈</span><h3>Submodular Optimization and Efficient Combinatorial Optimization</h3><p>My research explores efficient optimization and resource allocation in large-scale networks. I develop GNN-based influence maximization methods to improve node selection efficiency, diffusion effectiveness, and generalization. I also design budget-feasible submodular mechanisms that maximize collective utility while encouraging participants to truthfully report their private costs.
+          <article class="card"><span class="card-icon" aria-hidden="true">📈</span><h3>Submodular Optimization and Efficient Combinatorial Optimization</h3><p>My research explores efficient optimization and resource allocation in large-scale networks. I develop GNN-based influence maximization methods to improve node selection efficiency, diffusion effectiveness, and generalization. I also design budget-feasible submodular mechanisms that maximize collective utility while encouraging participants to truthfully report their private costs.
 ﻿</p><span class="tag">Submodular Optimization</span><span class="tag">Combinatorial Optimization</span><span class="tag">Social Networks</span></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">⌁</span><h3>Efficient Information Management for LLMs</h3><p>My research develops efficient information management for large language models through submodular optimization. I design token-budgeted prompt compression methods that preserve coverage, diversity, and relevance, alongside approximation-guaranteed algorithms for efficient long-term memory selection and dynamic maintenance that reduce computational costs while sustaining downstream task performance.</span>
+          <article class="card"><span class="card-icon" aria-hidden="true">🤖</span><h3>Efficient Information Management for LLMs</h3><p>My research develops efficient information management for large language models through submodular optimization. I design token-budgeted prompt compression methods that preserve coverage, diversity, and relevance, alongside approximation-guaranteed algorithms for efficient long-term memory selection and dynamic maintenance that reduce computational costs while sustaining downstream task performance.</span>
             <span class="tag">LLMs</span><span class="tag">Memory</span><span class="tag">Submodular Optimization</span><span class="tag">Streaming Optimization</span></article>
         </div>
       </section>
