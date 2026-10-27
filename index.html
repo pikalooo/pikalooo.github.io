@@ -177,6 +177,74 @@
 }
 
 
+/* ========== Animated homepage logo ========== */
+
+/* Emoji 基础样式 */
+.brand-emoji {
+  display: inline-grid;
+  place-items: center;
+  font-size: 1.8rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* 让两个 Emoji 重叠，防止切换时页面抖动 */
+.brand-emoji > span {
+  grid-area: 1 / 1;
+  display: block;
+}
+
+/* 默认显示 🙂 */
+.emoji-default {
+  opacity: 1;
+}
+
+/* 默认隐藏 😆 */
+.emoji-hover {
+  opacity: 0;
+}
+
+/* 鼠标悬停或键盘聚焦时切换表情 */
+.brand:hover .emoji-default,
+.brand:focus-visible .emoji-default {
+  opacity: 0;
+}
+
+.brand:hover .emoji-hover,
+.brand:focus-visible .emoji-hover {
+  opacity: 1;
+  animation: emoji-hop 0.75s ease-in-out infinite;
+}
+
+/* 跳跃 + 左右摇摆 */
+@keyframes emoji-hop {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  30% {
+    transform: translateY(-7px)
+               rotate(-10deg) scale(1.12);
+  }
+
+  55% {
+    transform: translateY(0)
+               rotate(6deg) scale(1.04);
+  }
+
+  75% {
+    transform: translateY(-3px)
+               rotate(-4deg) scale(1.07);
+  }
+}
+
+/* 尊重系统减少动画的偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .brand:hover .emoji-hover,
+  .brand:focus-visible .emoji-hover {
+    animation: none;
+  }
+}
 
 
     
@@ -189,9 +257,13 @@
   <!-- Navigation: customize labels and section links as needed. -->
   <header class="site-header">
 <div class="container header-inner">
-  <a class="brand" href="#home" aria-label="ZHT Home">
-    🙂
-  </a>
+
+<a class="brand" href="#home" aria-label="ZHT Home">
+  <span class="brand-emoji" aria-hidden="true">
+    <span class="emoji-default">🙂</span>
+    <span class="emoji-hover">😆</span>
+  </span>
+</a>
 </div>
       <nav class="nav" aria-label="Main navigation">
         <a href="#home">Home</a>
