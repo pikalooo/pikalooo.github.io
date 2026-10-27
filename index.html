@@ -247,7 +247,82 @@
 }
 
 
-    
+
+
+
+
+
+
+/* ========== Animated Research Icons ========== */
+
+/* Icon container */
+.card-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  font-size: 1.4rem;
+}
+
+/* Overlap two emojis */
+.card-icon > span {
+  grid-area: 1 / 1;
+  display: block;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+/* Default states */
+.icon-default {
+  opacity: 1;
+}
+
+.icon-hover {
+  opacity: 0;
+}
+
+/* Switch emojis on card hover */
+.card:hover .icon-default,
+.card:focus-within .icon-default {
+  opacity: 0;
+}
+
+.card:hover .icon-hover,
+.card:focus-within .icon-hover {
+  opacity: 1;
+  animation: research-icon-hop 0.8s ease-in-out infinite;
+}
+
+/* Gentle bouncing and rotation */
+@keyframes research-icon-hop {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  30% {
+    transform: translateY(-5px) rotate(-8deg) scale(1.12);
+  }
+
+  60% {
+    transform: translateY(0) rotate(5deg) scale(1.04);
+  }
+}
+
+/* Reduced-motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .card-icon > span {
+    transition: none;
+  }
+
+  .card:hover .icon-hover,
+  .card:focus-within .icon-hover {
+    animation: none;
+  }
+}
+
+   
   </style>
 
   
@@ -311,11 +386,20 @@
       <section id="research" class="content-section" aria-labelledby="research-title">
         <div class="section-head"><h2 id="research-title">Research</h2></div>
         <div class="cards">
-          <article class="card"><span class="card-icon" aria-hidden="true">🎭</span><h3>Transferable Adversarial Attacks</h3><p>My research investigates adversarial security and transferability in deep learning. I study fairness-targeted attacks, robust model learning, and transferable poisoning on graph neural networks and text-attributed graphs. I also develop physical adversarial attacks against modern object detection systems to enhance real-world effectiveness and cross-model transferability.
+          <article class="card"><span class="card-icon" aria-hidden="true">
+  <span class="icon-default">🎭</span>
+  <span class="icon-hover">⚡</span>
+</span><h3>Transferable Adversarial Attacks</h3><p>My research investigates adversarial security and transferability in deep learning. I study fairness-targeted attacks, robust model learning, and transferable poisoning on graph neural networks and text-attributed graphs. I also develop physical adversarial attacks against modern object detection systems to enhance real-world effectiveness and cross-model transferability.
 </p><span class="tag">Adversarial Attacks</span><span class="tag">GCN</span><span class="tag">GNN</span><span class="tag">Fairness</span></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">📈</span><h3>Submodular Optimization and Efficient Combinatorial Optimization</h3><p>My research explores efficient optimization and resource allocation in large-scale networks. I develop GNN-based influence maximization methods to improve node selection efficiency, diffusion effectiveness, and generalization. I also design budget-feasible submodular mechanisms that maximize collective utility while encouraging participants to truthfully report their private costs.
+          <article class="card"><span class="card-icon" aria-hidden="true">
+  <span class="icon-default">📈</span>
+  <span class="icon-hover">🚀</span>
+</span><h3>Submodular Optimization and Efficient Combinatorial Optimization</h3><p>My research explores efficient optimization and resource allocation in large-scale networks. I develop GNN-based influence maximization methods to improve node selection efficiency, diffusion effectiveness, and generalization. I also design budget-feasible submodular mechanisms that maximize collective utility while encouraging participants to truthfully report their private costs.
 ﻿</p><span class="tag">Submodular Optimization</span><span class="tag">Combinatorial Optimization</span><span class="tag">Social Networks</span></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">🤖</span><h3>Efficient Information Management for LLMs</h3><p>My research develops efficient information management for large language models through submodular optimization. I design token-budgeted prompt compression methods that preserve coverage, diversity, and relevance, alongside approximation-guaranteed algorithms for efficient long-term memory selection and dynamic maintenance that reduce computational costs while sustaining downstream task performance.</span>
+          <article class="card"><span class="card-icon" aria-hidden="true">
+  <span class="icon-default">🤖</span>
+  <span class="icon-hover">🧠</span>
+</span><h3>Efficient Information Management for LLMs</h3><p>My research develops efficient information management for large language models through submodular optimization. I design token-budgeted prompt compression methods that preserve coverage, diversity, and relevance, alongside approximation-guaranteed algorithms for efficient long-term memory selection and dynamic maintenance that reduce computational costs while sustaining downstream task performance.</p>
             <span class="tag">LLMs</span><span class="tag">Memory</span><span class="tag">Submodular Optimization</span><span class="tag">Streaming Optimization</span></article>
         </div>
       </section>
